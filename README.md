@@ -20,4 +20,11 @@
       
       3rd and 4th are to enable the opening of caja from cli without opening the whole desktop (see 2nd)
   2. Log off and on, then complete i3 config wizard (or not if you already have a config file)
-  3. Delete Bottom Panel
+  3. It seems to be the easiest way to not use caja with i3, nautilus works instead
+  
+     ```
+     sudo apt-get install nautilus
+     sudo apt-get remove caja
+     ```
+  
+  4. Delete Bottom Panel
