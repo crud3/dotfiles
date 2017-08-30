@@ -1,6 +1,6 @@
 # dotfiles
 ## ZSH
-## i3 under Ubuntu MATE
+## Installation of i3 under Ubuntu MATE 16.04
   Works for Ubuntu 16.04.3 LTS (Xenial) x86_64 / MATE Desktop Environment 1.12.1
   1. Install i3
   
@@ -25,6 +25,12 @@
      ```
      sudo apt-get install nautilus
      sudo apt-get remove caja
+     ```
+     Also install the following packages to open a terminal via right click in nautilus:
+     
+     ```
+     sudo apt-get install nautilus-actions
+     sudo apt-get remove gnome-terminal
      ```
   
   4. Delete Bottom Panel
