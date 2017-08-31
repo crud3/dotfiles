@@ -76,7 +76,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -173,4 +173,7 @@ bar {
 ## Bindsyms
 # Lock screen
 bindsym $mod+Shift+x exec i3lock
-
+# Nautilus
+bindsym $mod+n exec nautilus
+# Firefox (Fullscreen is now $mod+Shift+f)
+bindsym $mod+f exec firefox
