@@ -96,3 +96,5 @@ unsetopt hist_beep
 unsetopt list_beep
 # require confirmation for stuff like rm *
 unsetopt rm_star_silent
+# use my colors
+eval `dircolors ~/.dir_colors/dircolors`
