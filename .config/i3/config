@@ -33,7 +33,7 @@ floating_modifier $mod
 #bindsym $mod+Return exec i3-sensible-terminal
 
 ## start mate terminal as default
-bindsym $mod+Return exec mate-terminal
+bindsym $mod+Return exec konsole 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -170,10 +170,21 @@ bar {
 
 ### My defs ###
 
+# Start programs 
+mode "launcher" {
+        bindsym f exec firefox; mode "default"
+        bindsym t exec thunderbird; mode "default"
+        bindsym s exec studio; mode "default"
+        bindsym n exec nautilus; mode "default"
+}
+
 ## Bindsyms
+bindsym $mod+f mode "launcher"
+
 # Lock screen
 bindsym $mod+Shift+x exec i3lock
+
 # Nautilus
-bindsym $mod+n exec nautilus
+#bindsym $mod+n exec nautilus
 # Firefox (Fullscreen is now $mod+Shift+f)
-bindsym $mod+f exec firefox
+#bindsym $mod+f exec firefox
