@@ -32,7 +32,7 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 
-## start mate terminal as default
+## start konsole terminal as default
 bindsym $mod+Return exec konsole 
 
 # kill focused window
@@ -170,17 +170,21 @@ bar {
 
 ### My defs ###
 
+# Configure monitors
+exec --no-startup-id configureXrandr
+
 # Start programs 
 mode "launcher" {
         bindsym f exec firefox; mode "default"
         bindsym t exec thunderbird; mode "default"
         bindsym s exec studio; mode "default"
         bindsym n exec nautilus; mode "default"
+        bindsym v exec konsole -e vim; mode "default"
 }
 
 ## Bindsyms
 bindsym $mod+f mode "launcher"
-
+bindsym $mod+t exec togtouch
 # Lock screen
 bindsym $mod+Shift+x exec i3lock
 
