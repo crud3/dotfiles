@@ -174,20 +174,41 @@ bar {
 
 ### My defs ###
 
+# Colours
+# * class                 border  backgrd text    indicator
+ client.focused            #3daee9 #3daee9 #ffffff #2e9ef4
+ client.focused_inactive   #1cdc9a #1cdc9a #ffffff #484e50
+ client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
+ client.urgent             #2f343a #900000 #ffffff #900000
+
+
 # Configure monitors
 exec --no-startup-id configureXrandr
 
-# Start programs 
-mode "launcher" {
+# Exec programs mode
+set $mode_launcher Launcher (f) firefox, (t) thunderbird, (s) AndroidStudio, (n) Nautilus
+mode "$mode_launcher" {
         bindsym f exec firefox; mode "default"
         bindsym t exec thunderbird; mode "default"
         bindsym s exec studio; mode "default"
         bindsym n exec nautilus; mode "default"
-        bindsym v exec konsole -e vim; mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# System stuff
+set $mode_system System (s) shutdown, (l) logout, (r) reboot
+mode "$mode_system" {
+        bindsym s exec --no-startup-id systemctl poweroff -i; mode "default"
+        bindsym l exec --no-startup-id i3-msg exit; mode "default"
+        bindsym r exec --no-startup-id systemctl reboot; mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 ## Bindsyms
-bindsym $mod+f mode "launcher"
+bindsym $mod+f mode "$mode_launcher"
+bindsym $mod+Shift+s mode "$mode_system"
 bindsym $mod+t exec togtouch
 # Lock screen
 bindsym $mod+Shift+x exec i3lock
