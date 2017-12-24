@@ -17,7 +17,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -174,12 +174,12 @@ bar {
 
 ### My defs ###
 
-# Colours
+# Colors
 # * class                 border  backgrd text    indicator
- client.focused            #3daee9 #3daee9 #ffffff #2e9ef4
+ client.focused            #ffff00 #ffff00 #ff0000 #2e9ef4
  client.focused_inactive   #1cdc9a #1cdc9a #ffffff #484e50
  client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
- client.urgent             #2f343a #900000 #ffffff #900000
+ client.urgent             #ff0000 #ff0000 #ffff00 #900000
 
 
 # Configure monitors
