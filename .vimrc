@@ -1,5 +1,4 @@
 """" General stuff
-" Probably not necessary
 set nocompatible
 set encoding=utf8
 " Make backspace behavior normal
@@ -10,12 +9,12 @@ syntax on
 filetype plugin indent on
 " Relative line numbers
 set number relativenumber
-" Display last command in bottom bar
-set showcmd
 " current line highlighted
 "set cursorline
+
 " autocomplete menu
 " set wildmenu
+
 " show matching parens 
 set showmatch
 
@@ -26,12 +25,17 @@ set incsearch
 set hlsearch
 
 """" Spaces
+" Use spaces for tabs
+set expandtab
 " Number of spaces shown for a real tab
 set tabstop=4
 " Number of spaces inserted when tabbing in insert mode
 set softtabstop=4
-" Use spaces for tabs
-set expandtab
+
+"""" Status line
+" always show statusline
+set laststatus=2
+" Display last command in bottom bar
+set showcmd
 
 """" Color
-" TODO maybe get solarized or sth
