@@ -174,18 +174,20 @@ bar {
 
 ### My defs ###
 
-# Colors
+## Colors
 # * class                 border  backgrd text    indicator
  client.focused            #ffff00 #ffff00 #ff0000 #2e9ef4
  client.focused_inactive   #1cdc9a #1cdc9a #ffffff #484e50
  client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
  client.urgent             #ff0000 #ff0000 #ffff00 #900000
 
-
+## On first startup
 # Configure monitors
 exec --no-startup-id configureXrandr
+# Start dropbox daemon
 exec --no-startup-id dropbox start
 
+## Modes
 # Exec programs mode
 set $mode_launcher Launcher (f) firefox, (t) thunderbird, (s) AndroidStudio, (n) Nautilus
 mode "$mode_launcher" {
@@ -197,7 +199,7 @@ mode "$mode_launcher" {
         bindsym Escape mode "default"
 }
 
-# System stuff
+# System mode
 set $mode_system System (s) shutdown, (l) logout, (r) reboot
 mode "$mode_system" {
         bindsym s exec --no-startup-id systemctl poweroff -i; mode "default"
@@ -213,8 +215,3 @@ bindsym $mod+Shift+s mode "$mode_system"
 bindsym $mod+t exec togtouch
 # Lock screen
 bindsym $mod+Shift+x exec i3lock
-
-# Nautilus
-#bindsym $mod+n exec nautilus
-# Firefox (Fullscreen is now $mod+Shift+f)
-#bindsym $mod+f exec firefox
