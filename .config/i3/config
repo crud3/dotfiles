@@ -186,6 +186,8 @@ bar {
 exec --no-startup-id configureXrandr
 # Start dropbox daemon
 exec --no-startup-id dropbox start
+# Pulseaudio
+exec --no-startup-id pulseaudio --start
 
 ## Modes
 # Exec programs mode
