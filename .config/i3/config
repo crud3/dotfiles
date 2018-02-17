@@ -211,9 +211,20 @@ mode "$mode_system" {
         bindsym Escape mode "default"
 }
 
+# Lock mode
+set $mode_lock (n) pixelated, (w) Windows, (c) Windows crash
+mode "$mode_lock" {
+        bindsym n exec --no-startup-id lockscript -n; mode "default"
+        bindsym w exec --no-startup-id lockscript -w; mode "default"
+        bindsym c exec --no-startup-id lockscript -c; mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
 ## Bindsyms
 bindsym $mod+f mode "$mode_launcher"
 bindsym $mod+Shift+s mode "$mode_system"
-bindsym $mod+t exec togtouch
+bindsym $mod+Shift+p mode "$mode_lock"
+bindsym $mod+t exec --no-startup-id togtouch
 # Lock screen
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec --no-startup-id lockscript -n
