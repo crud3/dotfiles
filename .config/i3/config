@@ -172,6 +172,11 @@ bar {
         tray_output primary
 }
 
+## Gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 10
+gaps outer 5
+
 ### My defs ###
 
 ## Colors
@@ -226,5 +231,6 @@ bindsym $mod+f mode "$mode_launcher"
 bindsym $mod+Shift+s mode "$mode_system"
 bindsym $mod+Shift+p mode "$mode_lock"
 bindsym $mod+t exec --no-startup-id togtouch
+bindsym $mod+Shift+a exec --no-startup-id setrandomwp
 # Lock screen
 bindsym $mod+Shift+x exec --no-startup-id lockscript -n
