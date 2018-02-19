@@ -25,8 +25,8 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 
-## start konsole terminal as default
-bindsym $mod+Return exec konsole 
+## start gnome-terminal as default
+bindsym $mod+Return exec gnome-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -160,12 +160,15 @@ bar {
         tray_output primary
 }
 
+### My defs ###
+
+# Enable floating for tilda dropdown terminal
+for_window [class="tilda"] floating enable
+
 ## Gaps
 for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 5
-
-### My defs ###
 
 ## Colors
 # * class                 border  backgrd text    indicator
@@ -218,8 +221,9 @@ mode "$mode_lock" {
 bindsym $mod+f mode "$mode_launcher"
 bindsym $mod+Shift+s mode "$mode_system"
 bindsym $mod+Shift+p mode "$mode_lock"
+# Toggle touchpad on/off
 bindsym $mod+t exec --no-startup-id togtouch
+# Set a random wallpaper
 bindsym $mod+Shift+a exec --no-startup-id setrandomwp
-
 # Lock screen
 bindsym $mod+Shift+x exec --no-startup-id lockscript -n

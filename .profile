@@ -25,4 +25,6 @@ fi
 if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
-powerline-daemon -q
+
+# Set $TERMINAL for i3-sensible-terminal
+export TERMINAL=gnome-terminal
