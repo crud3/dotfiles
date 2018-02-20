@@ -191,10 +191,11 @@ exec --no-startup-id setrandomwp
 
 ## Modes
 # Exec programs mode
-set $mode_launcher Launcher (f) firefox, (t) thunderbird, (s) AndroidStudio, (n) Nautilus
+set $mode_launcher Launcher (f) firefox, (t) thunderbird, (c) Control Center, (s) AndroidStudio, (n) Nautilus
 mode "$mode_launcher" {
         bindsym f exec firefox; mode "default"
         bindsym t exec thunderbird; mode "default"
+        bindsym c exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center; mode "default"
         bindsym s exec studio; mode "default"
         bindsym n exec nautilus --no-desktop --new-window; mode "default"
         bindsym Return mode "default"
