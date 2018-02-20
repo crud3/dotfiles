@@ -184,6 +184,10 @@ exec --no-startup-id configureXrandr
 exec --no-startup-id dropbox start
 # Pulseaudio
 exec --no-startup-id pulseaudio --start
+# Tilda
+exec --no-startup-id tilda
+# Set random wallpaper
+exec --no-startup-id setrandomwp
 
 ## Modes
 # Exec programs mode
