@@ -232,3 +232,7 @@ bindsym $mod+t exec --no-startup-id togtouch
 bindsym $mod+Shift+a exec --no-startup-id setrandomwp
 # Lock screen
 bindsym $mod+Shift+x exec --no-startup-id lockscript -n
+# Use respective media keys for brightness manipulation
+bindsym XF86MonBrightnessDown exec --no-startup-id brightness -d
+bindsym XF86MonBrightnessUp exec --no-startup-id brightness -i
+
