@@ -1,36 +1,50 @@
-# dotfiles
-## ZSH
-## Installation of i3 under Ubuntu MATE 16.04
-  Works for Ubuntu 16.04.3 LTS (Xenial) x86_64 / MATE Desktop Environment 1.12.1
-  1. Install i3
-  
-     ``` sudo apt-get install i3 ```
-  2. Launch dconf-editor to set the following vars
-  
-      | Path | key | value/action
-      | ------ | ------ | ------ |
-      | org.mate.desktop.session.required-components | windowmanager | i3 |
-      | org.mate.desktop.session | required-components-list | delete 'filemanager' from array |
-      | org.mate.desktop.background | draw-background | false |
-      | org.mate.desktop.background | show-desktop-icons | false |
-      
-      1st should be clear
-      
-      2nd is to prevent MATE from opening a full-size floating window for the desktop on startup
-      
-      3rd and 4th are to enable the opening of caja from cli without opening the whole desktop (see 2nd)
-  2. Log off and on, then complete i3 config wizard (or not if you already have a config file)
-  3. It seems to be the easiest way to not use caja with i3, nautilus works instead
-  
-     ```
-     sudo apt-get install nautilus
-     sudo apt-get remove caja
-     ```
-     Also install the following packages to open a terminal via right click in nautilus:
-     
-     ```
-     sudo apt-get install nautilus-actions
-     sudo apt-get remove gnome-terminal
-     ```
-  
-  4. Delete Bottom Panel
+# System setup
+Last tested on Ubuntu 17.10
+
+## i3gaps
+After compiling i3gaps, the following packages must be installed:
+```git vim gparted i3status i3lock zsh rofi tilda pactl feh scrot arandr xbacklight```
+
+### Media keys
+Some media keys are supported by the i3 config (Volume up/down/mute, Brightness up/down). 
+The brightness manipulation relies on the ```brightness``` script from the bashscripts repository. 
+This script relies on ```xbacklight```, which may need the output device being added in the xorg.conf file. See bashscripts wiki.
+
+## zsh
+### oh-my-zsh
+```bash
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"```
+
+### powerlevel9k
+```bash
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k```
+
+### Font installation
+Relevant installed are:
+```
+Ubuntu Mono derivative Powerline Nerd Font Complete.ttf
+DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf
+PowerlineSymbols.otf
+DejaVu Sans Mono Bold Oblique for Powerline.ttf
+Ubuntu Mono derivative Powerline Nerd Font Complete.ttf
+DejaVu Sans Mono Bold for Powerline.ttf
+DejaVu Sans Mono Oblique for Powerline.ttf
+DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf
+```
+Installing:
+```bash
+cp [location]/DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf .local/share/fonts/
+fc-cache -vf .local/share/fonts
+```
+
+## Other packages
+```texlive texlive-lang-german texlive-latex-extra texlive-lang-cyrillic texlive-fonts-extra texmaker nautilus-dropbox curl android-tools-adb hunspell hunspell-de-de```
+
+### Dropbox setup
+Start with 'dropbox start -i' to automatically download and install daemon
+
+### Installing Zotero from archive
+```bash
+sudo tar -xvjf Zotero-5.0.35.1_linux-x86_64.tar.bz2 -C /opt
+ln -s /opt/Zotero_linux-x86_64/zotero ~/bin
+``` 
