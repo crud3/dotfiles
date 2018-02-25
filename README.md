@@ -25,24 +25,20 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 ```
 
 ### Font installation
-Relevant installed are:
 
-```
-Ubuntu Mono derivative Powerline Nerd Font Complete.ttf
-DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf
-PowerlineSymbols.otf
-DejaVu Sans Mono Bold Oblique for Powerline.ttf
-Ubuntu Mono derivative Powerline Nerd Font Complete.ttf
-DejaVu Sans Mono Bold for Powerline.ttf
-DejaVu Sans Mono Oblique for Powerline.ttf
-DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf
-```
+Usual font installation:
 
-Installing:
+Copy the font to .local/share/fonts or /usr/share/fonts and then rebuild the font cache
 
 ```sh
 cp [location]/DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf .local/share/fonts/
 fc-cache -vf .local/share/fonts
+```
+
+If there are problems with ```fc-cache``` recognizing the fonts, it is also possible to cone the nerd-fonts repository and use the install script.
+
+```sh
+./install.sh DroidSansMono
 ```
 
 ## Other packages
