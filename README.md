@@ -3,6 +3,7 @@ Last tested on Ubuntu 17.10
 
 ## i3gaps
 After compiling i3gaps, the following packages must be installed:
+
 ```git vim gparted i3status i3lock zsh rofi tilda pactl feh scrot arandr xbacklight```
 
 ### Media keys
@@ -14,14 +15,18 @@ This script relies on ```xbacklight```, which may need the output device being a
 ### oh-my-zsh
 Installation
 ```sh
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"```
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
 
 ### powerlevel9k
+
 ```sh
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k```
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
 
 ### Font installation
 Relevant installed are:
+
 ```
 Ubuntu Mono derivative Powerline Nerd Font Complete.ttf
 DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf
@@ -32,7 +37,9 @@ DejaVu Sans Mono Bold for Powerline.ttf
 DejaVu Sans Mono Oblique for Powerline.ttf
 DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf
 ```
+
 Installing:
+
 ```sh
 cp [location]/DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf .local/share/fonts/
 fc-cache -vf .local/share/fonts
