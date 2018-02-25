@@ -4,7 +4,12 @@ Last tested on Ubuntu 17.10
 ## i3gaps
 After compiling i3gaps, the following packages must be installed:
 
-```git vim gparted i3status i3lock zsh rofi tilda pactl feh scrot arandr xbacklight```
+```
+git vim i3status i3lock zsh rofi tilda pactl feh scrot arandr xbacklight
+```
+
+### Scripts
+Bash scripts from the bashscripts repository must be installed for full functionality.
 
 ### Media keys
 Some media keys are supported by the i3 config (Volume up/down/mute, Brightness up/down). 
@@ -42,7 +47,9 @@ If there are problems with ```fc-cache``` recognizing the fonts, it is also poss
 ```
 
 ## Other packages
-```texlive texlive-lang-german texlive-latex-extra texlive-lang-cyrillic texlive-fonts-extra texmaker nautilus-dropbox curl android-tools-adb hunspell hunspell-de-de```
+```
+texlive texlive-lang-german texlive-latex-extra texlive-lang-cyrillic texlive-fonts-extra texmaker gparted nautilus-dropbox curl android-tools-adb hunspell hunspell-de-de
+```
 
 ### Dropbox setup
 Start with 'dropbox start -i' to automatically download and install daemon
