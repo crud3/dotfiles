@@ -12,11 +12,12 @@ This script relies on ```xbacklight```, which may need the output device being a
 
 ## zsh
 ### oh-my-zsh
-```bash
+Installation
+```sh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"```
 
 ### powerlevel9k
-```bash
+```sh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k```
 
 ### Font installation
@@ -32,7 +33,7 @@ DejaVu Sans Mono Oblique for Powerline.ttf
 DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf
 ```
 Installing:
-```bash
+```sh
 cp [location]/DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf .local/share/fonts/
 fc-cache -vf .local/share/fonts
 ```
@@ -44,7 +45,7 @@ fc-cache -vf .local/share/fonts
 Start with 'dropbox start -i' to automatically download and install daemon
 
 ### Installing Zotero from archive
-```bash
+```sh
 sudo tar -xvjf Zotero-5.0.35.1_linux-x86_64.tar.bz2 -C /opt
 ln -s /opt/Zotero_linux-x86_64/zotero ~/bin
 ``` 
