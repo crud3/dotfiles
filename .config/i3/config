@@ -177,9 +177,11 @@ gaps outer 5
  client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
  client.urgent             #ff0000 #ff0000 #ffff00 #900000
 
-## On first startup
+## Execute on startup AND when restarting i3 in place
 # Configure monitors
-exec --no-startup-id configureXrandr
+exec_always --no-startup-id configureXrandr
+
+## Execute only on first startup
 # Start dropbox daemon
 exec --no-startup-id dropbox start
 # Pulseaudio
