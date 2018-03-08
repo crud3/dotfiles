@@ -31,18 +31,20 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 ### Font installation
 
-Usual font installation:
+Manual font installation:
 
-Copy the font to .local/share/fonts or /usr/share/fonts and then rebuild the font cache
+Copy the font to the respective font dir in ~/.local/share/fonts or /usr/share/fonts and then rebuild the font cache
 
 ```sh
-cp [location]/DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf .local/share/fonts/
-fc-cache -vf .local/share/fonts
+mkdir -p ~/.local/share/fonts/NerdFonts
+cp Droid\ Sans\ Mono\ Nerd\ Font\ Complete.otf ~/.local/share/fonts/NerdFonts/
+fc-cache -vf ~/.local/share/fonts
 ```
 
-If there are problems with ```fc-cache``` recognizing the fonts, it is also possible to cone the nerd-fonts repository and use the install script.
+It is also possible to clone the nerdfonts repo and use the install script
 
 ```sh
+git clone --depth 1 git@github.com:ryanoasis/nerd-fonts.git && cd nerd-fonts
 ./install.sh DroidSansMono
 ```
 
