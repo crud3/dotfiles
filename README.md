@@ -5,7 +5,7 @@ Last tested on Ubuntu 17.10
 After compiling i3gaps, the following packages must be installed:
 
 ```
-git vim i3status i3lock zsh rofi tilda pactl feh scrot arandr xbacklight
+git vim i3status i3lock i3blocks zsh rofi tilda pactl feh scrot arandr xbacklight
 ```
 
 ### Scripts
@@ -50,7 +50,7 @@ git clone --depth 1 git@github.com:ryanoasis/nerd-fonts.git && cd nerd-fonts
 
 ## Other packages
 ```
-texlive texlive-lang-german texlive-latex-extra texlive-lang-cyrillic texlive-fonts-extra texmaker gparted nautilus-dropbox curl android-tools-adb hunspell hunspell-de-de
+texlive texlive-lang-german texlive-latex-extra texlive-lang-cyrillic texlive-fonts-extra texmaker gparted nautilus-dropbox curl android-tools-adb hunspell hunspell-de-de pandoc
 ```
 
 ### Dropbox setup

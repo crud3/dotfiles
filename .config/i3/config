@@ -154,7 +154,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         i3bar_command i3bar
-        status_command i3status
+        status_command i3blocks #i3status
         position bottom
         tray_output primary
         #   tray_output eDP1
