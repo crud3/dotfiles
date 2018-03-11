@@ -215,8 +215,8 @@ exec --no-startup-id dropbox start
 exec --no-startup-id pulseaudio --start
 # Tilda
 exec --no-startup-id tilda
-# Set random wallpaper
-exec --no-startup-id setrandomwp
+# Set wallpaper
+exec --no-startup-id feh --bg-center ~/Dropbox/nixres/wallpaper/wall05.jpg
 
 ## Modes
 # Exec programs mode
