@@ -4,8 +4,13 @@ Last tested on Ubuntu 17.10
 ## i3gaps
 After compiling i3gaps, the following packages must be installed:
 
+Ubuntu:
 ```
 git vim i3status i3lock i3blocks zsh rofi tilda pactl feh scrot arandr xbacklight
+```
+Arch:
+```
+git vim i3status i3lock i3blocks zsh rofi tilda pulseaudio feh scrot xrandr arandr xorg-xbacklight
 ```
 
 ### Scripts
