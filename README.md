@@ -1,6 +1,4 @@
-# System setup
-Last tested on Ubuntu 17.10
-
+# Ubuntu System setup
 ## i3gaps
 After compiling i3gaps, the following packages must be installed:
 
@@ -66,3 +64,22 @@ Start with 'dropbox start -i' to automatically download and install daemon
 sudo tar -xvjf Zotero-5.0.35.1_linux-x86_64.tar.bz2 -C /opt
 ln -s /opt/Zotero_linux-x86_64/zotero ~/bin
 ``` 
+
+# Arch installation
+Standard installation of a wired network system is pretty straightforward following the [installation guide](https://wiki.archlinux.org/index.php/Installation_guide) on the [wiki](https://wiki.archlinux.org/https://www.google.com).
+## Disk encryption
+For disk encryption, follow the respective [instructions](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS). The mkinitcpio config (see also: [here](https://wiki.archlinux.org/index.php/Dm-crypt/System_configuration#Boot_loader)) from the wiki required some changes though. It may be necessary to place the block hook before the autodetect. For a system with unencrypted `/boot` partition and encrypted `/root` partition, this worked for me:
+```sh
+HOOKS=(base udev block autodetect keyboard modconf encrypt filesystems fsck
+```
+Install and use the the non-legacy grub! Required params for `/etc/default/grub` before generating config with `grub-mkconfig -o /boot/grub/grub.cfg`:
+```sh
+GRUB_CMDLINE_LINUX="cryptdevice=UUID=<ENCRYPTED-DEVICE-UUID>:cryptroot root=/dev/mapper/cryptroot"
+```
+Grub installation (MBR): `grub-install --target=i386-pc /dev/sdX`
+
+## First steps
+It makes sense to roughly follow the Arch Wikiw [General recommendations](https://wiki.archlinux.org/index.php/General_recommendations). If the (wired) network connection doesn't work at all, maybe `dhcpcd enp8s0`
+My first steps on the fresh install as root.
+* Install sudo and vim `pacman -S sudo vim`
+* Add non-root user `useradd -m -s /bin/bash <NAME>` and add to `sudoers` with `visudo`
