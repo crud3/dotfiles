@@ -6,11 +6,6 @@ Ubuntu:
 ```
 git vim i3status i3lock i3blocks zsh rofi tilda pactl feh scrot arandr xbacklight
 ```
-Arch:
-```
-git vim i3status i3lock i3blocks zsh rofi tilda pulseaudio feh scrot xrandr arandr xorg-xbacklight
-```
-
 ### Scripts
 Bash scripts from the bashscripts repository must be installed for full functionality.
 
@@ -72,14 +67,58 @@ For disk encryption, follow the respective [instructions](https://wiki.archlinux
 ```sh
 HOOKS=(base udev block autodetect keyboard modconf encrypt filesystems fsck
 ```
-Install and use the the non-legacy grub! Required params for `/etc/default/grub` before generating config with `grub-mkconfig -o /boot/grub/grub.cfg`:
+Install and use the the non-legacy grub (`pacman -S grub`)!
+Grub installation (MBR): `grub-install --target=i386-pc /dev/sdX`
+Required params for `/etc/default/grub` before generating config with `grub-mkconfig -o /boot/grub/grub.cfg`:
 ```sh
 GRUB_CMDLINE_LINUX="cryptdevice=UUID=<ENCRYPTED-DEVICE-UUID>:cryptroot root=/dev/mapper/cryptroot"
 ```
-Grub installation (MBR): `grub-install --target=i386-pc /dev/sdX`
 
 ## First steps
-It makes sense to roughly follow the Arch Wikiw [General recommendations](https://wiki.archlinux.org/index.php/General_recommendations). If the (wired) network connection doesn't work at all, maybe `dhcpcd enp8s0`
+It is advised to roughly follow the Arch Wiki [General recommendations](https://wiki.archlinux.org/index.php/General_recommendations). If the (wired) network connection doesn't work at all, maybe `dhcpcd enp8s0` (TODO make persistent)
 My first steps on the fresh install as root.
 * Install sudo and vim `pacman -S sudo vim`
 * Add non-root user `useradd -m -s /bin/bash <NAME>` and add to `sudoers` with `visudo`
+
+## Packages
+Some packages that will probably be needed at some point
+```
+git openssh xclip base-devel python python2 xorg-font-utils
+```
+### AUR packages
+Some required AUR packages
+```
+nerd-fonts-complete pulsemixer
+```
+
+### Xorg
+* When installing `xorg-server`, you may get prompted with:
+  ```
+  Resolving dependencies...
+  :: There are 2 providers available for libgl:
+  :: Repository extra
+    1) libglvnd 2) nvidia-extra-340xx0utils
+  ```
+* Chosing [libglvnd](https://github.com/NVIDIA/libglvnd) for now.
+* Also installing `xorg-xinit` package to start Xorg via `startx` (`~/.xinitrc` is read by xinit and its frontend `startx`)
+  * `startx` and `xinit` commands will try to execute `~/.xserverrc` if it exists, so it makes sense to create it (see [here](https://wiki.archlinux.org/index.php/Xinit#xserverrc))
+  * They will also look for a `~/.xinitrc`, so create one from default to configure it later.
+  
+  `cp /etc/X11/xinit/xinitrc ~/.xinitrc`
+* In this default configuration, xinit will start a basic environment with twm, xclock and xterm, so if your want to start Xorg at this point, it makes sense to install the respective packages: `xorg-twm xorg-xclock xterm`.
+
+### i3-gaps and utils
+Install community package `i3-gaps` and the other programs used by my i3config (see bashscripts repo). Some packages (i3status, dmenu) are fallbacks required by the default i3 config until I get my config with my programs to work. Those could be deleted later or just kept as fallbacks for darker times.
+```
+dmenu i3blocks i3bar i3lock zsh rofi tilda feh scrot xorg-xrandr arandr xorg-xbacklight pulseaudio pulseaudio-alsa
+```  
+* When installing firefox, I was prompted with two available providers for `libx264.so=152-64: 1) libx264 2) libx264-10bit`. Chosing the first one. Also chosing `noto-fonts` for `ttf-font`.
+
+### Configure Xorg to use i3
+* To automatically start i3 instead of twm when `startx` is called, comment out the lines in `~/.initrc` starting twm and instead put `exec i3` there.
+* After finishing the necessary i3 config and ZSH configurations: Execute `exec startx` when it's a login shell at virtual terminal 1 in`~/.profile`.
+
+### General configurations
+* Set zsh to default shell `chsh -s $(which zsh)`
+* ZSH has some wrong keybindings for me on a fresh arch install (zsh does *not* read `/etc/inputrc` or `~/.inputrc`, it has an own line editor0 , so I will probably have to fix them as keybindings in the `.zshrc`
+
