@@ -50,7 +50,7 @@ nerd-fonts-complete pulsemixer
 #### i3-gaps
 Install community package `i3-gaps` and the other programs used by my i3config (see bashscripts repo). Some packages (i3status, dmenu) are fallbacks required by the default i3 config until I can use my config with my programs. Those could be deleted after the configuration or just kept as fallbacks for darker times.
 ```
-i3blocks i3bar i3lock rofi dmenu terminator zsh tilda feh scrot xorg-xrandr arandr xorg-xbacklight pulseaudio pulseaudio-alsa alsa-utils sysstat archlinux-wallpaper imagemagick
+i3blocks i3bar i3lock rofi dmenu terminator zsh tilda feh scrot xorg-xrandr arandr xorg-xbacklight pulseaudio pulseaudio-alsa alsa-utils sysstat archlinux-wallpaper imagemagick thefuck
 ```  
 My ZSH setup also requires [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and [powerlevel9k](https://github.com/bhilburn/powerlevel9k).
 
@@ -76,7 +76,7 @@ My startup startup procedure is as follows:
 ## After initial setup
 After i3-gaps, zsh etc. are configured, installing the following packages
 ```
-firefox thunderbird ranger pcmanfm thefuck neofetch
+firefox thunderbird ranger pcmanfm neofetch
 ```
 * When installing firefox, I was prompted with two available providers for `libx264.so=152-64: 1) libx264 2) libx264-10bit`. Chosing the first one. Also chosing `noto-fonts` for `ttf-font`.
 
