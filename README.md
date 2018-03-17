@@ -15,10 +15,17 @@ GRUB_CMDLINE_LINUX="cryptdevice=UUID=<ENCRYPTED-DEVICE-UUID>:cryptroot root=/dev
 ```
 
 ## Initial configuration / setup
-It's best to follow the Arch Wiki [General recommendations](https://wiki.archlinux.org/index.php/General_recommendations). If the (wired) network connection doesn't work at all, maybe `dhcpcd enp8s0` (TODO make persistent)
+It's best to follow the Arch Wiki [General recommendations](https://wiki.archlinux.org/index.php/General_recommendations).
 
 First steps on the fresh install as root.
 * Add non-root user `useradd -m -s /bin/bash <NAME>` and add to `sudoers` with `visudo` and continue as that user
+
+### Internet connection
+If there was a working internet connection when logged in as root during installation / initial configuration, but not when logged in with the new user, the DHCP client may not be running (check out `systemctl status`. In this case you have to start it manually and enable the systemd module for the respective interfaces.
+```sh
+sudo systemctl start dhcpcd@enp8s0.service
+sudo systemctl enable dhcpcd@enp8s0.service
+```
 
 ### Packages
 Some packages that will probably be needed / nice to have at some point in the initial configuration
