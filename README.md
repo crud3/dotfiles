@@ -76,7 +76,7 @@ My startup startup procedure is as follows:
 ## After initial setup
 After i3-gaps, zsh etc. are configured, installing the following packages
 ```
-firefox thunderbird ranger pcmanfm
+firefox thunderbird ranger pcmanfm thefuck neofetch
 ```
 * When installing firefox, I was prompted with two available providers for `libx264.so=152-64: 1) libx264 2) libx264-10bit`. Chosing the first one. Also chosing `noto-fonts` for `ttf-font`.
 
