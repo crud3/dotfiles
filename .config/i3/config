@@ -12,10 +12,7 @@ font pango:DroidSansMono Nerd Font 12
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-
-## start gnome-terminal as default
-bindsym $mod+Return exec gnome-terminal 
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -218,31 +215,34 @@ exec --no-startup-id feh --bg-center ~/Dropbox/nixres/wallpaper/wall05.jpg
 
 ## Modes
 # Exec programs mode
-set $mode_launcher Launcher (f) firefox, (t) thunderbird, (c) Control Center, (s) AndroidStudio, (n) Nautilus
+bindsym $mod+f mode "$mode_launcher"
+set $mode_launcher Launcher (f) firefox, (t) thunderbird, (s) AndroidStudio, (n) Nautilus
 mode "$mode_launcher" {
         bindsym f exec firefox; mode "default"
         bindsym t exec thunderbird; mode "default"
-        bindsym c exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center; mode "default"
         bindsym s exec studio; mode "default"
-        bindsym n exec nautilus --no-desktop --new-window; mode "default"
+        bindsym n exec pcmanfm; mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 # System mode
+bindsym $mod+Shift+s mode "$mode_system"
 set $mode_system System (s) shutdown, (l) logout, (r) reboot
 mode "$mode_system" {
         bindsym s exec --no-startup-id systemctl poweroff -i; mode "default"
-        bindsym l exec --no-startup-id i3-msg exit; mode "default"
+        bindsym l exec --no-startup-id i3-msg exit && exit; mode "default"
         bindsym r exec --no-startup-id systemctl reboot; mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 # Lock mode
-set $mode_lock (n) pixelated, (w) Windows, (c) Windows crash
+bindsym $mod+Shift+p mode "$mode_lock"
+set $mode_lock (n) pixelated, (t) transparent (w) Windows, (c) Windows crash
 mode "$mode_lock" {
         bindsym n exec --no-startup-id lockscript -n; mode "default"
+        bindsym t exec --no-startup-id lockscript -t; mode "default"
         bindsym w exec --no-startup-id lockscript -w; mode "default"
         bindsym c exec --no-startup-id lockscript -c; mode "default"
         bindsym Return mode "default"
@@ -250,9 +250,6 @@ mode "$mode_lock" {
 }
 
 ## Bindsyms
-bindsym $mod+f mode "$mode_launcher"
-bindsym $mod+Shift+s mode "$mode_system"
-bindsym $mod+Shift+p mode "$mode_lock"
 # Toggle touchpad on/off
 bindsym $mod+t exec --no-startup-id togtouch
 # Set a random wallpaper
