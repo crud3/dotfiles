@@ -15,10 +15,17 @@ GRUB_CMDLINE_LINUX="cryptdevice=UUID=<ENCRYPTED-DEVICE-UUID>:cryptroot root=/dev
 ```
 
 ## Initial configuration / setup
-It's best to follow the Arch Wiki [General recommendations](https://wiki.archlinux.org/index.php/General_recommendations). If the (wired) network connection doesn't work at all, maybe `dhcpcd enp8s0` (TODO make persistent)
+It's best to follow the Arch Wiki [General recommendations](https://wiki.archlinux.org/index.php/General_recommendations).
 
 First steps on the fresh install as root.
 * Add non-root user `useradd -m -s /bin/bash <NAME>` and add to `sudoers` with `visudo` and continue as that user
+
+### Internet connection
+If there was a working internet connection when logged in as root during installation / initial configuration, but not when logged in with the new user, the DHCP client may not be running (check out `systemctl status`. In this case you have to start it manually and enable the systemd module for the respective interfaces.
+```sh
+sudo systemctl start dhcpcd@enp8s0.service
+sudo systemctl enable dhcpcd@enp8s0.service
+```
 
 ### Packages
 Some packages that will probably be needed / nice to have at some point in the initial configuration
@@ -50,7 +57,7 @@ nerd-fonts-complete pulsemixer
 #### i3-gaps
 Install community package `i3-gaps` and the other programs used by my i3config (see bashscripts repo). Some packages (i3status, dmenu) are fallbacks required by the default i3 config until I can use my config with my programs. Those could be deleted after the configuration or just kept as fallbacks for darker times.
 ```
-i3blocks i3bar i3lock rofi dmenu terminator zsh tilda feh scrot xorg-xrandr arandr xorg-xbacklight pulseaudio pulseaudio-alsa alsa-utils sysstat archlinux-wallpaper
+i3blocks i3bar i3lock rofi dmenu terminator zsh tilda feh scrot xorg-xrandr arandr xorg-xbacklight pulseaudio pulseaudio-alsa alsa-utils sysstat arc-gtk-theme archlinux-wallpaper imagemagick thefuck ttf-dejavu
 ```  
 My ZSH setup also requires [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and [powerlevel9k](https://github.com/bhilburn/powerlevel9k).
 
@@ -76,7 +83,7 @@ My startup startup procedure is as follows:
 ## After initial setup
 After i3-gaps, zsh etc. are configured, installing the following packages
 ```
-firefox thunderbird ranger pcmanfm
+firefox thunderbird ranger pcmanfm neofetch
 ```
 * When installing firefox, I was prompted with two available providers for `libx264.so=152-64: 1) libx264 2) libx264-10bit`. Chosing the first one. Also chosing `noto-fonts` for `ttf-font`.
 
