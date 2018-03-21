@@ -28,6 +28,9 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# Copy content of argument to clipboard
+alias fclip='xclip -sel c <'
+
 # Search processes with argument, e.g. 'psg bash'
 alias psg='ps aux | grep -v grep | grep -i -e VSZ -e'
 
