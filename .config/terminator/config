@@ -3,7 +3,7 @@
   inactive_color_offset = 0.908163265306
   title_font = SauceCodePro Nerd Font Mono Medium 12
 [keybindings]
-  help = F5
+  help = <Primary><Alt>h
 [layouts]
   [[default]]
     [[[child1]]]
