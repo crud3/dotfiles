@@ -74,7 +74,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 ## Set variables for consistency
-set $workspace1 "1: Main"
+set $workspace1 "1:Main"
 set $workspace2 "2" 
 set $workspace3 "3" 
 #set $workspace3 ""
@@ -84,7 +84,7 @@ set $workspace6 "6"
 set $workspace7 "7" 
 set $workspace8 "8" 
 set $workspace9 "9" 
-set $workspace10 "10: Idea"
+set $workspace10 "10:COM"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -111,15 +111,13 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 ## Assign standard workspaces
-assign [class="jetbrains-idea"] $workspace10
-
+assign [class="Signal"] $workspace10
+assign [class="TelegramDesktop"] $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -210,6 +208,8 @@ exec --no-startup-id dropbox start
 exec --no-startup-id nextcloud
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id tilda
+exec --no-startup-id signal-desktop
+exec --no-startup-id telegram-desktop
 # Set wallpaper
 exec --no-startup-id feh --bg-center ~/Dropbox/nixres/wallpaper/wall05.jpg
 
