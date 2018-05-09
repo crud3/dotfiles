@@ -99,7 +99,7 @@ Last tested with Ubuntu 17.10 on 2018-03-16
 ## i3gaps
 After compiling i3gaps, the following packages must be installed:
 ```
-git vim i3status i3lock i3blocks zsh rofi tilda pactl feh scrot arandr xbacklight
+git vim i3status i3lock i3blocks zsh rofi tilda pulseaudio feh scrot arandr xbacklight
 ```
 ### Scripts
 Bash scripts from the bashscripts repository must be installed for full functionality.
