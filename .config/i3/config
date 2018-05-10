@@ -251,3 +251,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
+# Really weird ghetto fix for a really weird bug(?) or feature
+# After introducing polybar to my i3 setup, all terminals opened with $mod+Enter would open on the workspace where the last/first terminal was opened, 
+# even if I am on another workspace
+# Might be because of my weird polybar launch script?
+exec terminator
+exec i3-msg restart
