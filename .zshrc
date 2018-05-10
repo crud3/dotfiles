@@ -30,26 +30,13 @@ source $ZSH/oh-my-zsh.sh
 # Delete all aliases, then restore the old ones
 unalias -a; eval $saved_aliases; unset saved_aliases
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 ##### ZSH customizations ##### 
 
 ## Aliases 
 # ZSH has a really weird history function
 alias history='history 0'
 [[ -f ~/.bash_aliases ]] && source .bash_aliases
-eval $(thefuck --alias)
+[[ -x "$(command -v thefuck)" ]] && eval $(thefuck --alias)
 
 ## no beep on error
 unsetopt beep
