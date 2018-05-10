@@ -1,5 +1,4 @@
 .bashrc
-# check ubuntus .bash_profile (Xorg etc.) before copying
 .bash_profile
 .bash_aliases
 .profile
@@ -15,6 +14,6 @@
 .config/i3blocks/config
 .config/tilda/config_0
 .config/terminator/config
-# check what ubuntu gnome DE sets here
+.config/polybar/config
 .config/gtk-3.0/settings.ini
 
