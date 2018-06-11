@@ -14,3 +14,4 @@ fi
 # Set $TERMINAL for i3-sensible-terminal
 export TERMINAL=$(which terminator)
 export EDITOR=$(which vim)
+export XDG_CONFIG_HOME="$HOME/.config"

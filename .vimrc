@@ -21,7 +21,10 @@ syntax on
 " file type detection -> sensible intending
 filetype plugin indent on
 " Relative line numbers
-set number relativenumber
+set number
+" swp file dir
+set directory^=$HOME/.vim/tmp//
+
 " current line highlighted
 "set cursorline
 
