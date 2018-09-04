@@ -1,4 +1,5 @@
 # Arch Setup
+Last tested 09/2018
 ## Installation
 Standard installation of a wired network system is pretty straightforward following the [installation guide](https://wiki.archlinux.org/index.php/Installation_guide) on the [wiki](https://wiki.archlinux.org/https://www.google.com).
 ### Disk encryption
@@ -93,13 +94,13 @@ firefox thunderbird ranger pcmanfm neofetch
 
 
 
-# Old Ubuntu System setup
-Last tested with Ubuntu 17.10 on 2018-03-16
+# Ubuntu System setup
+Last tested with Ubuntu 18.04 (09/2018)
 
 ## i3gaps
 After compiling i3gaps, the following packages have proven to be useful
 ```
-git vim xinput i3lock zsh rofi tilda pulseaudio feh scrot arandr terminator curl libnotify-bin2 xbacklight xclip gedit
+git vim xinput i3lock zsh rofi tilda pulseaudio feh scrot arandr terminator curl xbacklight xclip gedit
 ```
 ### Scripts
 Bash scripts from the bashscripts repository must be installed for full functionality.
