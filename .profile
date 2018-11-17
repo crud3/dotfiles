@@ -15,3 +15,5 @@ fi
 export TERMINAL=$(which terminator)
 export EDITOR=$(which vim)
 export XDG_CONFIG_HOME="$HOME/.config"
+
+export PATH="$HOME/.cargo/bin:$PATH"
