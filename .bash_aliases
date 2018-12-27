@@ -55,3 +55,6 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
 
 ## Python on Ubuntu
 alias python='python3'
+
+## gnome-control-center with i3
+alias gnome-control-center='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'

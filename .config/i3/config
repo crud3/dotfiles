@@ -200,6 +200,7 @@ mode "$mode_launcher" {
         bindsym t exec thunderbird; mode "default"
         bindsym s exec studio; mode "default"
         bindsym n exec pcmanfm; mode "default"
+        bindsym c exec XDG_CURRENT_DESKTOP=GNOME gnome-control-center; mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
