@@ -187,7 +187,7 @@ exec --no-startup-id signal-desktop
 exec --no-startup-id telegram-desktop
 exec --no-startup-id nm-applet
 # Set wallpaper
-exec --no-startup-id feh --bg-center ~/Dropbox/nixres/wallpaper/wall05.jpg
+exec --no-startup-id feh --bg-center ~/Dropbox/nixres/wallpaper/notsafe.jpg
 # Only use gaps when there is more than one window
 smart_gaps on
 
