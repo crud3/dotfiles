@@ -194,13 +194,15 @@ smart_gaps on
 ## Modes
 # Exec programs mode
 bindsym $mod+f mode "$mode_launcher"
-set $mode_launcher Launcher (f) firefox, (t) thunderbird, (s) AndroidStudio, (n) Nautilus
+set $mode_launcher Launcher (f) Firefox, (t) Thunderbird, (c) Control Center, (n) Nautilus, (k) KeePass, (b) Blueman-Manager
 mode "$mode_launcher" {
         bindsym f exec firefox; mode "default"
         bindsym t exec thunderbird; mode "default"
-        bindsym s exec studio; mode "default"
-        bindsym n exec pcmanfm; mode "default"
         bindsym c exec XDG_CURRENT_DESKTOP=GNOME gnome-control-center; mode "default"
+#        bindsym s exec studio; mode "default"
+        bindsym n exec nautilus; mode "default"
+        bindsym k exec keepassxc; mode "default"
+        bindsym b exec blueman-manager; mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
