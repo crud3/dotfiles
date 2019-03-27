@@ -35,7 +35,7 @@ unalias -a; eval $saved_aliases; unset saved_aliases
 ## Aliases 
 # ZSH has a really weird history function
 alias history='history 0'
-[[ -f ~/.bash_aliases ]] && source .bash_aliases
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -x "$(command -v thefuck)" ]] && eval $(thefuck --alias)
 
 ## no beep on error
