@@ -100,7 +100,7 @@ Last tested with Ubuntu 18.04 (09/2018)
 ## i3gaps
 After compiling i3gaps, the following packages have proven to be useful
 ```
-git vim xinput i3lock zsh rofi tilda pulseaudio feh scrot arandr terminator curl xbacklight xclip gedit
+git vim xinput i3lock zsh rofi tilda pulseaudio feh scrot arandr terminator curl xbacklight xclip gedit flameshot
 ```
 ### Scripts
 Bash scripts from the bashscripts repository must be installed for full functionality.

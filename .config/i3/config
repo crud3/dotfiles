@@ -231,12 +231,13 @@ mode "$mode_lock" {
 }
 # Screenshot mode
 bindsym $mod+Shift+d mode "$mode_screenshot"
-set $mode_screenshot (a) all, (f) focused window, (d) all with 3s delay, (g) focused with 3s delay
+set $mode_screenshot (a) all, (f) focused, (d) all with 3s delay, (g) focused with 3s delay, (s) Flameshot
 mode "$mode_screenshot" {
         bindsym --release a exec --no-startup-id scrot -z; mode "default"
         bindsym --release f exec --no-startup-id scrot -u; mode "default"
         bindsym --release t exec --no-startup-id scrot -d 3; mode "default"
         bindsym --release g exec --no-startup-id scrot -u -d 3; mode "default"
+        bindsym --release s exec --no-startup-id flameshot gui; mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -256,9 +257,3 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-# Really weird ghetto fix for a really weird bug(?) or feature
-# After introducing polybar to my i3 setup, all terminals opened with $mod+Enter would open on the workspace where the last/first terminal was opened, 
-# even if I am on another workspace
-# Might be because of my weird polybar launch script?
-exec terminator
-exec i3-msg restart
