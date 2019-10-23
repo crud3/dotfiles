@@ -22,27 +22,13 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git, virtualenv)
 
 # Saving pre-oh-my-zsh aliases
 saved_aliases=$(alias -L)
 source $ZSH/oh-my-zsh.sh
 # Delete all aliases, then restore the old ones
 unalias -a; eval $saved_aliases; unset saved_aliases
-
-# >>> conda initialize >>>
-__conda_setup="$('/home/crude/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/crude/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/crude/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/crude/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 ##### ZSH customizations ##### 
 
@@ -70,7 +56,7 @@ unsetopt rm_star_silent
 # Powerlevel9k customization
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context root_indicator dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs battery time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv command_execution_time background_jobs battery time)
 
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=2

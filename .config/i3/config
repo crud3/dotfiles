@@ -147,6 +147,8 @@ bindsym $mod+r mode "resize"
 
 # Polybar starts on all monitors
 exec_always --no-startup-id launchPolybar
+# Lock after inactivity
+exec xautolock -time 15 -locker 'lockscript -n' &
 
 ### My defs ###
 # Automatically switch to workspace with urgent window
