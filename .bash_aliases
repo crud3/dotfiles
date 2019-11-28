@@ -65,6 +65,19 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
 ## Python
 # version on Ubuntu
 alias python='python3'
+alias pip='pip3'
+# Ansible uses python2 by default on Ubuntu...
+alias ansible='python3 /usr/bin/ansible'
+alias ansible-config='python3 /usr/bin/ansible-config'
+alias ansible-connection='python3 /usr/bin/ansible-connection'
+alias ansible-console='python3 /usr/bin/ansible-console'
+alias ansible-doc='python3 /usr/bin/ansible-doc'
+alias ansible-playbook='python3 /usr/bin/ansible-playbook'
+alias ansible-galaxy='python3 /usr/bin/ansible-galaxy'
+alias ansible-inventory='python3 /usr/bin/ansible-inventory'
+alias ansible-pull='python3 /usr/bin/ansible-pull'
+alias ansible-vault='python3 /usr/bin/'
+
 # venv
 activate () {
     if [[ -d venv ]] ; then

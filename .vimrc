@@ -8,6 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'lervag/vimtex'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
